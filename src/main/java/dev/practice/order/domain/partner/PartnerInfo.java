@@ -8,7 +8,6 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 @Getter
-@Builder
 public class PartnerInfo {
     private Long id;
     private String partnerToken;
@@ -17,4 +16,13 @@ public class PartnerInfo {
     private String email;
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    public PartnerInfo(Partner partner) {
+        this.id = partner.getId();
+        this.partnerToken = partner.getPartnerToken();
+        this.partnerName = partner.getPartnerName();
+        this.businessNo = partner.getBusinessNo();
+        this.email = partner.getEmail();
+        this.status = partner.getStatus();
+    }
 }

@@ -13,6 +13,7 @@ import javax.persistence.*;
 
 @Slf4j
 @Entity
+@Getter
 @NoArgsConstructor
 @Table(name = "partners")
 public class Partner extends AbstractEntity {
