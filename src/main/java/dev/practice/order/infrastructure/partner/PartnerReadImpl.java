@@ -18,4 +18,7 @@ public class PartnerReadImpl implements PartnerReader {
         return partnerRepository.findByPartnerToken(partnerToken)
                 .orElseThrow(RuntimeException::new);
     }
+    static void process() {
+        System.out.println("테스트 입니다.");
+    }
 }
