@@ -21,6 +21,7 @@ public class PartnerStoreImpl implements PartnerStore {
         if(StringUtils.isEmpty(partner.getPartnerName())) throw new InvalidParameterException();
         if(StringUtils.isEmpty(partner.getBusinessNo())) throw new InvalidParameterException();
         if(StringUtils.isEmpty(partner.getEmail())) throw new InvalidParameterException();
+
         return partnerRepository.save(partner);
     }
 }
