@@ -2,6 +2,7 @@ package dev.practice.order.domain.item;
 
 import dev.practice.order.common.exception.InvalidParamException;
 import dev.practice.order.domain.AbstractEntity;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +12,7 @@ import javax.persistence.*;
 
 @Slf4j
 @Entity
+@Getter
 @NoArgsConstructor
 @Table(name = "item_options")
 public class ItemOption extends AbstractEntity {

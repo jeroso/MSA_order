@@ -43,7 +43,6 @@ public class Partner extends AbstractEntity {
         if(StringUtils.isEmpty(businessNo)) throw new RuntimeException("empty businessNo");
         if(StringUtils.isEmpty(email)) throw new RuntimeException("empty email");
 
-
         this.partnerToken = TokenGenerator.randomCharacterWithPrefix(PREFIX_PARTNER);
         this.partnerName = partnerName;
         this.businessNo = businessNo;
