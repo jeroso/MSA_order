@@ -65,7 +65,7 @@ public class Item extends AbstractEntity {
     public void changeOnSales() {
         this.status = Status.ON_SALES;
     }
-    public void endOfSales() {
+    public void changeEndOfSales() {
         this.status = Status.END_OF_SALES;
     }
 }

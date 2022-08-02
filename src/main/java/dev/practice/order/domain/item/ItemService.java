@@ -7,5 +7,5 @@ public interface ItemService {
 
     void changeEndOfSale(String itemToken);
 
-    ItemInfo retrieveItemInfo(String itemToken);
+    ItemInfo.Main retrieveItemInfo(String itemToken);
 }
