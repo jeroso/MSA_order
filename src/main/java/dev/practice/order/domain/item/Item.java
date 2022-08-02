@@ -3,6 +3,7 @@ package dev.practice.order.domain.item;
 import dev.practice.order.common.exception.InvalidParamException;
 import dev.practice.order.common.util.TokenGenerator;
 import dev.practice.order.domain.AbstractEntity;
+import dev.practice.order.domain.item.optiongroup.ItemOptionGroup;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.*;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 

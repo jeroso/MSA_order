@@ -1,15 +1,15 @@
-package dev.practice.order.domain.item;
+package dev.practice.order.domain.item.optiongroup;
 
 import dev.practice.order.common.exception.InvalidParamException;
 import dev.practice.order.domain.AbstractEntity;
+import dev.practice.order.domain.item.Item;
+import dev.practice.order.domain.item.option.ItemOption;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.*;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,9 +1,10 @@
 package dev.practice.order.domain.item;
 
+import dev.practice.order.domain.item.option.ItemOption;
+import dev.practice.order.domain.item.optiongroup.ItemOptionGroup;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -28,11 +29,38 @@ public class ItemCommand {
         }
     }
 
+    @Getter
+    @Builder
+    @ToString
     public static class RegisterItemOptionGroupRequest{
+        private final Integer ordering;
+        private final String itemOptionGroupName;
+        private final List<RegisterItemOptionRequest> itemOptionRequestList; // ex) R, B, W
 
+        public ItemOptionGroup toEntity(Item item) {
+            return ItemOptionGroup.builder()
+                    .item(item)
+                    .ordering(ordering)
+                    .itemOptionGroupName(itemOptionGroupName)
+                    .build();
+        }
     }
 
+    @Getter
+    @Builder
+    @ToString
     public static class RegisterItemOptionRequest{
+        private final Integer ordering;
+        private final String itemOptionName;
+        private final Long itemOptionPrice;
 
+        public ItemOption toEntity(ItemOptionGroup itemOptionGroup) {
+            return ItemOption.builder()
+                    .itemOptionGroup(itemOptionGroup)
+                    .ordering(ordering)
+                    .itemOptionName(itemOptionName)
+                    .itemOptionPrice(itemOptionPrice)
+                    .build();
+        }
     }
 }

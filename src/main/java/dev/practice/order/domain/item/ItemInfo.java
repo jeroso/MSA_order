@@ -1,5 +1,6 @@
 package dev.practice.order.domain.item;
 
+import dev.practice.order.domain.item.option.ItemOption;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -37,6 +38,20 @@ public class ItemInfo {
         private final Long itemOptionPrice;
 
         public ItemOptionGroupInfo(ItemOption itemOption) {
+            this.ordering = itemOption.getOrdering();
+            this.itemOptionName = itemOption.getItemOptionName();
+            this.itemOptionPrice = itemOption.getItemOptionPrice();
+        }
+    }
+
+    @Getter
+    @ToString
+    public static class ItemOptionInfo{
+        private final Integer ordering;
+        private final String itemOptionName;
+        private final Long itemOptionPrice;
+
+        public ItemOptionInfo(ItemOption itemOption) {
             this.ordering = itemOption.getOrdering();
             this.itemOptionName = itemOption.getItemOptionName();
             this.itemOptionPrice = itemOption.getItemOptionPrice();
