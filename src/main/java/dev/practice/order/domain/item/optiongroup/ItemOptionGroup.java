@@ -5,6 +5,7 @@ import dev.practice.order.domain.AbstractEntity;
 import dev.practice.order.domain.item.Item;
 import dev.practice.order.domain.item.option.ItemOption;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @Slf4j
 @Entity
+@Getter
 @NoArgsConstructor
 @Table(name = "item_option_groups")
 public class ItemOptionGroup extends AbstractEntity {
