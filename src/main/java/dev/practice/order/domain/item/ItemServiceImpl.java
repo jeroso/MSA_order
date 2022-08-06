@@ -22,9 +22,12 @@ public class ItemServiceImpl implements ItemService{
     @Override
     @Transactional
     public String registerItem(ItemCommand.RegisterItemRequest command, String partnerToken) {
+        // 1. getPartnerId 가져오기
         Partner partner = partnerReader.getPartner(partnerToken);
+        // 2. item 생성후 item store 에 저장
         Item initItem = command.toEntity(partner.getId());
         Item item = itemStore.store(initItem);
+        // 3. itemOptionGroup + itemOption 저장
         itemOptionSeriesFactory.store(command, item);
         return item.getItemToken();
     }

@@ -21,6 +21,9 @@ public class ItemCommand {
         private final List<RegisterItemOptionGroupRequest> itemOptionGroupRequestList; //ex)색상, 사이즈
 
         public Item toEntity(Long partnerId) {
+            /**
+             *  이곳에서 Item.builder 의 TokenGenerator 를 통해 토큰이 주입되게 됨.
+             */
             return Item.builder()
                     .partnerId(partnerId)
                     .itemName(itemName)
