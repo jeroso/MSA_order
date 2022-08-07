@@ -29,11 +29,11 @@ public class ItemOptionSeriesFactoryImpl implements ItemOptionSeriesFactory {
         if(CollectionUtils.isEmpty(itemOptionGroupRequestList)) return Collections.emptyList();
 
         return itemOptionGroupRequestList.stream()
-                .map(requestItemOptionGroup ->{
+                .map(requestItemOptionGroup ->{     //ex) 색상, 사이즈
                     ItemOptionGroup initItemOptionGroup = requestItemOptionGroup.toEntity(item);
                     ItemOptionGroup itemOptionGroup = itemOptionGroupStore.store(initItemOptionGroup);
 
-                    requestItemOptionGroup.getItemOptionRequestList().forEach(requestItemOption ->{
+                    requestItemOptionGroup.getItemOptionRequestList().forEach(requestItemOption ->{ //ex) 빨,노,파, M, L, XL
                         ItemOption initItemOption = requestItemOption.toEntity(itemOptionGroup);
                         itemOptionStore.store(initItemOption);
                     });
