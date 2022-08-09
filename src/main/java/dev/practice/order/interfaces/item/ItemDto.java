@@ -48,6 +48,13 @@ public class ItemDto {
     }
 
     @Getter
+    @Setter
+    @ToString
+    public static class ChangeStatusItemRequest {
+        private String itemToken;
+    }
+
+    @Getter
     @Builder
     @ToString
     public static class Main{
