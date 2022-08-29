@@ -19,6 +19,10 @@ public class ItemDto {
         private String itemName;
         private Long itemPrice;
         private List<RegisterItemOptionGroupRequest> itemOptionGroupList;
+
+        // 기본매퍼 itemDto -> itemCommand
+        // itemDto 내의 collection 요소, 즉 ItemOptionGroupDto -> ItemOptionGroupCommand
+
     }
 
 
